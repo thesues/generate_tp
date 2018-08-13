@@ -1,0 +1,224 @@
+(lp0
+S'\nstatic int connect(vfs_handle_struct *handle,\n\t\t\t\t  const char *svc, const char *user)\n'
+p1
+aS'\nstatic void disconnect(vfs_handle_struct *handle)\n'
+p2
+aS'\nstatic uint64_t disk_free(vfs_handle_struct *handle,\n\t\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\t\tuint64_t *bsize,\n\t\t\t\t\tuint64_t *dfree,\n\t\t\t\t\tuint64_t *dsize)\n'
+p3
+aS'\nstatic int get_quota(struct vfs_handle_struct *handle,\n\t\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\t\tenum SMB_QUOTA_TYPE qtype,\n\t\t\t\t\tunid_t id,\n\t\t\t\t\tSMB_DISK_QUOTA *qt)\n'
+p4
+aS'\nstatic int set_quota(struct vfs_handle_struct *handle,\n\t\t\t\t    enum SMB_QUOTA_TYPE qtype, unid_t id,\n\t\t\t\t    SMB_DISK_QUOTA *qt)\n'
+p5
+aS'\nstatic int get_shadow_copy_data(struct vfs_handle_struct *handle,\n\t\t\t\t\t       struct files_struct *fsp,\n\t\t\t\t\t       struct shadow_copy_data *shadow_copy_data,\n\t\t\t\t\t       bool labels)\n'
+p6
+aS'\nstatic int statvfs(struct vfs_handle_struct *handle,\n\t\t\t\t  const struct smb_filename *smb_fname,\n\t\t\t\t  struct vfs_statvfs_struct *statbuf)\n'
+p7
+aS'\nstatic uint32_t fs_capabilities(struct vfs_handle_struct *handle,\n\t\t\t\t\t       enum timestamp_set_resolution *p_ts_res)\n'
+p8
+aS'\nstatic NTSTATUS get_dfs_referrals(\n\t\t\tstruct vfs_handle_struct *handle,\n\t\t\tstruct dfs_GetDFSReferral *r)\n'
+p9
+aS'\nstatic DIR *opendir(vfs_handle_struct *handle,\n\t\t\t\t   const struct smb_filename *smb_fname,\n\t\t\t\t   const char *mask, uint32_t attr)\n'
+p10
+aS'\nstatic DIR *fdopendir(vfs_handle_struct *handle,\n\t\t\t\t\t      files_struct *fsp,\n\t\t\t\t\t      const char *mask, uint32_t attr)\n'
+p11
+aS'\nstatic struct dirent *readdir(vfs_handle_struct *handle,\n\t\t\t\t\t\t DIR *dirp,\n\t\t\t\t\t\t SMB_STRUCT_STAT *sbuf)\n'
+p12
+aS'\nstatic void seekdir(vfs_handle_struct *handle,\n\t\t\t\t   DIR *dirp, long offset)\n'
+p13
+aS'\nstatic long telldir(vfs_handle_struct *handle,\n\t\t\t\t   DIR *dirp)\n'
+p14
+aS'\nstatic void rewinddir(vfs_handle_struct *handle,\n\t\t\t\t     DIR *dirp)\n'
+p15
+aS'\nstatic int mkdir(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tmode_t mode)\n'
+p16
+aS'\nstatic int rmdir(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname)\n'
+p17
+aS'\nstatic int closedir(vfs_handle_struct *handle,\n\t\t\t\t   DIR *dirp)\n'
+p18
+aS'\nstatic void init_search_op(vfs_handle_struct *handle,\n\t\t\t\t\t  DIR *dirp)\n'
+p19
+aS'\nstatic int open(vfs_handle_struct *handle,\n\t\t\t       struct smb_filename *fname,\n\t\t\t       files_struct *fsp,\n\t\t\t       int flags, mode_t mode)\n'
+p20
+aS'\nstatic NTSTATUS create_file(vfs_handle_struct *handle,\n\t\t\t\t\t   struct smb_request *req,\n\t\t\t\t\t   uint16_t root_dir_fid,\n\t\t\t\t\t   struct smb_filename *fname,\n\t\t\t\t\t   uint32_t access_mask,\n\t\t\t\t\t   uint32_t share_access,\n\t\t\t\t\t   uint32_t create_disposition,\n\t\t\t\t\t   uint32_t create_options,\n\t\t\t\t\t   uint32_t file_attributes,\n\t\t\t\t\t   uint32_t oplock_request,\n\t\t\t\t\t   struct smb2_lease *lease,\n\t\t\t\t\t   uint64_t allocation_size,\n\t\t\t\t\t   uint32_t private_flags,\n\t\t\t\t\t   struct security_descriptor *sd,\n\t\t\t\t\t   struct ea_list *ea_list,\n\t\t\t\t\t   files_struct **result_fsp,\n\t\t\t\t\t   int *pinfo,\n\t\t\t\t\t   const struct smb2_create_blobs *in_context_blobs,\n\t\t\t\t\t   struct smb2_create_blobs *out_context_blobs)\n'
+p21
+aS'\nstatic int close(vfs_handle_struct *handle, files_struct *fsp)\n'
+p22
+aS'\nstatic ssize_t read(vfs_handle_struct *handle,\n\t\t\t\t   files_struct *fsp, void *data, size_t n)\n'
+p23
+aS'\nstatic ssize_t pread(vfs_handle_struct *handle,\n\t\t\t\t    files_struct *fsp,\n\t\t\t\t    void *data, size_t n, off_t offset)\n'
+p24
+aS'\nstatic struct tevent_req *pread_send(\n\tstruct vfs_handle_struct *handle, TALLOC_CTX *mem_ctx,\n\tstruct tevent_context *ev, struct files_struct *fsp,\n\tvoid *data, size_t n, off_t offset)\n'
+p25
+aS'\nstatic ssize_t pread_recv(struct tevent_req *req,\n\t\t\t\t\t struct vfs_aio_state *vfs_aio_state)\n'
+p26
+aS'\nstatic ssize_t write(vfs_handle_struct *handle,\n\t\t\t\t    files_struct *fsp,\n\t\t\t\t    const void *data, size_t n)\n'
+p27
+aS'\nstatic ssize_t pwrite(vfs_handle_struct *handle,\n\t\t\t\t     files_struct *fsp,\n\t\t\t\t     const void *data, size_t n,\n\t\t\t\t     off_t offset)\n'
+p28
+aS'\nstatic struct tevent_req *pwrite_send(\n\tstruct vfs_handle_struct *handle, TALLOC_CTX *mem_ctx,\n\tstruct tevent_context *ev, struct files_struct *fsp,\n\tconst void *data, size_t n, off_t offset)\n'
+p29
+aS'\nstatic ssize_t pwrite_recv(struct tevent_req *req,\n\t\t\t\t\t  struct vfs_aio_state *vfs_aio_state)\n'
+p30
+aS'\nstatic off_t lseek(vfs_handle_struct *handle,\n\t\t\t\t      files_struct *fsp,\n\t\t\t\t      off_t offset, int whence)\n'
+p31
+aS'\nstatic ssize_t sendfile(vfs_handle_struct *handle, int tofd,\n\t\t\t\t       files_struct *fromfsp,\n\t\t\t\t       const DATA_BLOB *hdr, off_t offset,\n\t\t\t\t       size_t n)\n'
+p32
+aS'\nstatic ssize_t recvfile(vfs_handle_struct *handle, int fromfd,\n\t\t\t\t       files_struct *tofsp,\n\t\t\t\t       off_t offset,\n\t\t\t\t       size_t n)\n'
+p33
+aS'\nstatic int rename(vfs_handle_struct *handle,\n\t\t\t\t const struct smb_filename *oldname,\n\t\t\t\t const struct smb_filename *newname)\n'
+p34
+aS'\nstatic int fsync(vfs_handle_struct *handle, files_struct *fsp)\n'
+p35
+aS'\nstatic struct tevent_req *fsync_send(\n\tstruct vfs_handle_struct *handle, TALLOC_CTX *mem_ctx,\n\tstruct tevent_context *ev, struct files_struct *fsp)\n'
+p36
+aS'\nstatic int fsync_recv(struct tevent_req *req,\n\t\t\t\t     struct vfs_aio_state *vfs_aio_state)\n'
+p37
+aS'\nstatic int stat(vfs_handle_struct *handle,\n\t\t\t       struct smb_filename *fname)\n'
+p38
+aS'\nstatic int fstat(vfs_handle_struct *handle, files_struct *fsp,\n\t\t\t\tSMB_STRUCT_STAT *sbuf)\n'
+p39
+aS'\nstatic int lstat(vfs_handle_struct *handle,\n\t\t\t\tstruct smb_filename *path)\n'
+p40
+aS'\nstatic uint64_t get_alloc_size(vfs_handle_struct *handle,\n\t\t\t\t\t      files_struct *fsp,\n\t\t\t\t\t      const SMB_STRUCT_STAT *sbuf)\n'
+p41
+aS'\nstatic int unlink(vfs_handle_struct *handle,\n\t\t\t\t const struct smb_filename *path)\n'
+p42
+aS'\nstatic int chmod(vfs_handle_struct *handle,\n\t\t\tconst struct smb_filename *smb_fname,\n\t\t\tmode_t mode)\n'
+p43
+aS'\nstatic int fchmod(vfs_handle_struct *handle, files_struct *fsp,\n\t\t\t\t mode_t mode)\n'
+p44
+aS'\nstatic int chown(vfs_handle_struct *handle,\n\t\t\tconst struct smb_filename *smb_fname,\n\t\t\tuid_t uid,\n\t\t\tgid_t gid)\n'
+p45
+aS'\nstatic int fchown(vfs_handle_struct *handle, files_struct *fsp,\n\t\t\t\t uid_t uid, gid_t gid)\n'
+p46
+aS'\nstatic int lchown(vfs_handle_struct *handle,\n\t\t\tconst struct smb_filename *smb_fname,\n\t\t\tuid_t uid,\n\t\t\tgid_t gid)\n'
+p47
+aS'\nstatic int chdir(vfs_handle_struct *handle,\n\t\t\tconst struct smb_filename *smb_fname)\n'
+p48
+aS'\nstatic struct smb_filename *getwd(vfs_handle_struct *handle,\n\t\t\t\t\tTALLOC_CTX *mem_ctx)\n'
+p49
+aS'\nstatic int ntimes(vfs_handle_struct *handle,\n\t\t\t\t const struct smb_filename *path,\n\t\t\t\t struct smb_file_time *ft)\n'
+p50
+aS'\nstatic int ftruncate(vfs_handle_struct *handle,\n\t\t\t\t    files_struct *fsp,\n\t\t\t\t    off_t len)\n'
+p51
+aS'\nstatic int fallocate(vfs_handle_struct *handle,\n\t\t\t\t    files_struct *fsp,\n\t\t\t\t    uint32_t mode,\n\t\t\t\t    off_t offset,\n\t\t\t\t    off_t len)\n'
+p52
+aS'\nstatic bool lock(vfs_handle_struct *handle, files_struct *fsp,\n\t\t\t\tint op, off_t offset, off_t count,\n\t\t\t\tint type)\n'
+p53
+aS'\nstatic int kernel_flock(struct vfs_handle_struct *handle,\n\t\t\t\t       struct files_struct *fsp,\n\t\t\t\t       uint32_t share_mode, uint32_t access_mask)\n'
+p54
+aS'\nstatic int linux_setlease(vfs_handle_struct *handle,\n\t\t\t\t\t files_struct *fsp,\n\t\t\t\t\t int leasetype)\n'
+p55
+aS'\nstatic bool getlock(vfs_handle_struct *handle,\n\t\t\t\t   files_struct *fsp,\n\t\t\t\t   off_t *poffset, off_t *pcount,\n\t\t\t\t   int *ptype, pid_t *ppid)\n'
+p56
+aS'\nstatic int symlink(vfs_handle_struct *handle,\n\t\t\t\tconst char *link_contents,\n\t\t\t\tconst struct smb_filename *new_smb_fname)\n'
+p57
+aS'\nstatic int readlink(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tchar *buf,\n\t\t\t\tsize_t bufsiz)\n'
+p58
+aS'\nstatic int link(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *old_smb_fname,\n\t\t\t\tconst struct smb_filename *new_smb_fname)\n'
+p59
+aS'\nstatic int mknod(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tmode_t mode,\n\t\t\t\tSMB_DEV_T dev)\n'
+p60
+aS'\nstatic struct smb_filename *realpath(vfs_handle_struct *handle,\n\t\t\t\tTALLOC_CTX *ctx,\n\t\t\t\tconst struct smb_filename *smb_fname)\n'
+p61
+aS'\nstatic int chflags(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tunsigned int flags)\n'
+p62
+aS'\nstatic struct file_id file_id_create(struct vfs_handle_struct *handle,\n\t\t\t\t\t\t    const SMB_STRUCT_STAT *sbuf)\n'
+p63
+aS'\nstatic struct tevent_req *offload_read_send(\n\tTALLOC_CTX *mem_ctx,\n\tstruct tevent_context *ev,\n\tstruct vfs_handle_struct *handle,\n\tstruct files_struct *fsp,\n\tuint32_t fsctl,\n\tuint32_t ttl,\n\toff_t offset,\n\tsize_t to_copy)\n'
+p64
+aS'\nstatic NTSTATUS offload_read_recv(\n\tstruct tevent_req *req,\n\tstruct vfs_handle_struct *handle,\n\tTALLOC_CTX *mem_ctx,\n\tDATA_BLOB *_token_blob)\n'
+p65
+aS'\nstatic struct tevent_req *offload_write_send(struct vfs_handle_struct *handle,\n\t\t\t\t\t\t\t TALLOC_CTX *mem_ctx,\n\t\t\t\t\t\t\t struct tevent_context *ev,\n\t\t\t\t\t\t\t uint32_t fsctl,\n\t\t\t\t\t\t\t DATA_BLOB *token,\n\t\t\t\t\t\t\t off_t transfer_offset,\n\t\t\t\t\t\t\t struct files_struct *dest_fsp,\n\t\t\t\t\t\t\t off_t dest_off,\n\t\t\t\t\t\t\t off_t num)\n'
+p66
+aS'\nstatic NTSTATUS offload_write_recv(struct vfs_handle_struct *handle,\n\t\t\t\t\t       struct tevent_req *req,\n\t\t\t\t\t       off_t *copied)\n'
+p67
+aS'\nstatic NTSTATUS get_compression(vfs_handle_struct *handle,\n\t\t\t\t\t       TALLOC_CTX *mem_ctx,\n\t\t\t\t\t       struct files_struct *fsp,\n\t\t\t\t\t       struct smb_filename *smb_fname,\n\t\t\t\t\t       uint16_t *_compression_fmt)\n'
+p68
+aS'\nstatic NTSTATUS set_compression(vfs_handle_struct *handle,\n\t\t\t\t\t       TALLOC_CTX *mem_ctx,\n\t\t\t\t\t       struct files_struct *fsp,\n\t\t\t\t\t       uint16_t compression_fmt)\n'
+p69
+aS'\nstatic NTSTATUS snap_check_path(struct vfs_handle_struct *handle,\n\t\t\t\t\t       TALLOC_CTX *mem_ctx,\n\t\t\t\t\t       const char *service_path,\n\t\t\t\t\t       char **base_volume)\n'
+p70
+aS'\nstatic NTSTATUS snap_create(struct vfs_handle_struct *handle,\n\t\t\t\t\t   TALLOC_CTX *mem_ctx,\n\t\t\t\t\t   const char *base_volume,\n\t\t\t\t\t   time_t *tstamp,\n\t\t\t\t\t   bool rw,\n\t\t\t\t\t   char **base_path,\n\t\t\t\t\t   char **snap_path)\n'
+p71
+aS'\nstatic NTSTATUS snap_delete(struct vfs_handle_struct *handle,\n\t\t\t\t\t   TALLOC_CTX *mem_ctx,\n\t\t\t\t\t   char *base_path,\n\t\t\t\t\t   char *snap_path)\n'
+p72
+aS'\nstatic NTSTATUS streaminfo(vfs_handle_struct *handle,\n\t\t\t\t\t  struct files_struct *fsp,\n\t\t\t\t\t  const struct smb_filename *smb_fname,\n\t\t\t\t\t  TALLOC_CTX *mem_ctx,\n\t\t\t\t\t  unsigned int *pnum_streams,\n\t\t\t\t\t  struct stream_struct **pstreams)\n'
+p73
+aS'\nstatic int get_real_filename(struct vfs_handle_struct *handle,\n\t\t\t\t\t    const char *path,\n\t\t\t\t\t    const char *name,\n\t\t\t\t\t    TALLOC_CTX *mem_ctx,\n\t\t\t\t\t    char **found_name)\n'
+p74
+aS'\nstatic const char *connectpath(vfs_handle_struct *handle,\n\t\t\t\t\tconst struct smb_filename *smb_fname)\n'
+p75
+aS'\nstatic NTSTATUS brl_lock_windows(struct vfs_handle_struct *handle,\n\t\t\t\t\t\tstruct byte_range_lock *br_lck,\n\t\t\t\t\t\tstruct lock_struct *plock,\n\t\t\t\t\t\tbool blocking_lock)\n'
+p76
+aS'\nstatic bool brl_unlock_windows(struct vfs_handle_struct *handle,\n\t\t\t\t\t      struct messaging_context *msg_ctx,\n\t\t\t\t\t      struct byte_range_lock *br_lck,\n\t\t\t\t\t      const struct lock_struct *plock)\n'
+p77
+aS'\nstatic bool brl_cancel_windows(struct vfs_handle_struct *handle,\n\t\t\t\t\t      struct byte_range_lock *br_lck,\n\t\t\t\t\t      struct lock_struct *plock)\n'
+p78
+aS'\nstatic bool strict_lock_check(struct vfs_handle_struct *handle,\n\t\t\t\t\t     struct files_struct *fsp,\n\t\t\t\t\t     struct lock_struct *plock)\n'
+p79
+aS'\nstatic NTSTATUS translate_name(struct vfs_handle_struct *handle,\n\t\t\t\t\t      const char *name,\n\t\t\t\t\t      enum vfs_translate_direction direction,\n\t\t\t\t\t      TALLOC_CTX *mem_ctx,\n\t\t\t\t\t      char **mapped_name)\n'
+p80
+aS'\nstatic NTSTATUS fsctl(struct vfs_handle_struct *handle,\n\t\t\t\tstruct files_struct *fsp,\n\t\t\t\tTALLOC_CTX *ctx,\n\t\t\t\tuint32_t function,\n\t\t\t\tuint16_t req_flags,\n\t\t\t\tconst uint8_t *_in_data,\n\t\t\t\tuint32_t in_len,\n\t\t\t\tuint8_t **_out_data,\n\t\t\t\tuint32_t max_out_len,\n\t\t\t\tuint32_t *out_len)\n'
+p81
+aS'\nstatic NTSTATUS get_dos_attributes(struct vfs_handle_struct *handle,\n\t\t\t\t\tstruct smb_filename *smb_fname,\n\t\t\t\t\tuint32_t *dosmode)\n'
+p82
+aS'\nstatic NTSTATUS fget_dos_attributes(struct vfs_handle_struct *handle,\n\t\t\t\t\tstruct files_struct *fsp,\n\t\t\t\t\tuint32_t *dosmode)\n'
+p83
+aS'\nstatic NTSTATUS set_dos_attributes(struct vfs_handle_struct *handle,\n\t\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\t\tuint32_t dosmode)\n'
+p84
+aS'\nstatic NTSTATUS fset_dos_attributes(struct vfs_handle_struct *handle,\n\t\t\t\t\tstruct files_struct *fsp,\n\t\t\t\t\tuint32_t dosmode)\n'
+p85
+aS'\nstatic NTSTATUS fget_nt_acl(vfs_handle_struct *handle,\n\t\t\t\t\t   files_struct *fsp,\n\t\t\t\t\t   uint32_t security_info,\n\t\t\t\t\t   TALLOC_CTX *mem_ctx,\n\t\t\t\t\t   struct security_descriptor **ppdesc)\n'
+p86
+aS'\nstatic NTSTATUS get_nt_acl(vfs_handle_struct *handle,\n\t\t\t\t\t  const struct smb_filename *smb_fname,\n\t\t\t\t\t  uint32_t security_info,\n\t\t\t\t\t  TALLOC_CTX *mem_ctx,\n\t\t\t\t\t  struct security_descriptor **ppdesc)\n'
+p87
+aS'\nstatic NTSTATUS fset_nt_acl(vfs_handle_struct *handle,\n\t\t\t\t\t   files_struct *fsp,\n\t\t\t\t\t   uint32_t security_info_sent,\n\t\t\t\t\t   const struct security_descriptor *psd)\n'
+p88
+aS'\nstatic NTSTATUS audit_file(struct vfs_handle_struct *handle,\n\t\t\t\tstruct smb_filename *smb_fname,\n\t\t\t\tstruct security_acl *sacl,\n\t\t\t\tuint32_t access_requested,\n\t\t\t\tuint32_t access_denied)\n'
+p89
+aS'\nstatic int chmod_acl(vfs_handle_struct *handle,\n\t\t\tconst struct smb_filename *smb_fname,\n\t\t\tmode_t mode)\n'
+p90
+aS'\nstatic int fchmod_acl(vfs_handle_struct *handle,\n\t\t\t\t     files_struct *fsp, mode_t mode)\n'
+p91
+aS'\nstatic SMB_ACL_T sys_acl_get_file(vfs_handle_struct *handle,\n\t\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\t\tSMB_ACL_TYPE_T type,\n\t\t\t\t\tTALLOC_CTX *mem_ctx)\n'
+p92
+aS'\nstatic SMB_ACL_T sys_acl_get_fd(vfs_handle_struct *handle,\n\t\t\t\t\t       files_struct *fsp,\n\t\t\t\t\t       TALLOC_CTX *mem_ctx)\n'
+p93
+aS'\nstatic int sys_acl_blob_get_file(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tTALLOC_CTX *mem_ctx,\n\t\t\t\tchar **blob_description,\n\t\t\t\tDATA_BLOB *blob)\n'
+p94
+aS'\nstatic int sys_acl_blob_get_fd(vfs_handle_struct *handle,\n\t\t\t\t\t      files_struct *fsp,\n\t\t\t\t\t      TALLOC_CTX *mem_ctx, \n\t\t\t\t\t      char **blob_description,\n\t\t\t\t\t      DATA_BLOB *blob)\n'
+p95
+aS'\nstatic int sys_acl_set_file(vfs_handle_struct *handle,\n\t\t\t\t\t   const struct smb_filename *smb_fname,\n\t\t\t\t\t   SMB_ACL_TYPE_T acltype,\n\t\t\t\t\t   SMB_ACL_T theacl)\n'
+p96
+aS'\nstatic int sys_acl_set_fd(vfs_handle_struct *handle,\n\t\t\t\t\t files_struct *fsp,\n\t\t\t\t\t SMB_ACL_T theacl)\n'
+p97
+aS'\nstatic int sys_acl_delete_def_file(vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname)\n'
+p98
+aS'\nstatic ssize_t getxattr(struct vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tconst char *name,\n\t\t\t\tvoid *value,\n\t\t\t\tsize_t size)\n'
+p99
+aS'\nstatic ssize_t fgetxattr(struct vfs_handle_struct *handle,\n\t\t\t\t\tstruct files_struct *fsp,\n\t\t\t\t\tconst char *name, void *value,\n\t\t\t\t\tsize_t size)\n'
+p100
+aS'\nstatic ssize_t listxattr(struct vfs_handle_struct *handle,\n\t\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\t\tchar *list,\n\t\t\t\t\tsize_t size)\n'
+p101
+aS'\nstatic ssize_t flistxattr(struct vfs_handle_struct *handle,\n\t\t\t\t\t struct files_struct *fsp, char *list,\n\t\t\t\t\t size_t size)\n'
+p102
+aS'\nstatic int removexattr(struct vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tconst char *name)\n'
+p103
+aS'\nstatic int fremovexattr(struct vfs_handle_struct *handle,\n\t\t\t\t       struct files_struct *fsp,\n\t\t\t\t       const char *name)\n'
+p104
+aS'\nstatic int setxattr(struct vfs_handle_struct *handle,\n\t\t\t\tconst struct smb_filename *smb_fname,\n\t\t\t\tconst char *name,\n\t\t\t\tconst void *value,\n\t\t\t\tsize_t size,\n\t\t\t\tint flags)\n'
+p105
+aS'\nstatic int fsetxattr(struct vfs_handle_struct *handle,\n\t\t\t\t    struct files_struct *fsp, const char *name,\n\t\t\t\t    const void *value, size_t size, int flags)\n'
+p106
+aS'\nstatic bool aio_force(struct vfs_handle_struct *handle,\n\t\t\t\t     struct files_struct *fsp)\n'
+p107
+aS'\nstatic NTSTATUS durable_cookie(struct vfs_handle_struct *handle,\n\t\t\t\t\t      struct files_struct *fsp,\n\t\t\t\t\t      TALLOC_CTX *mem_ctx,\n\t\t\t\t\t      DATA_BLOB *cookie)\n'
+p108
+aS'\nstatic NTSTATUS durable_disconnect(struct vfs_handle_struct *handle,\n\t\t\t\t\t\t  struct files_struct *fsp,\n\t\t\t\t\t\t  const DATA_BLOB old_cookie,\n\t\t\t\t\t\t  TALLOC_CTX *mem_ctx,\n\t\t\t\t\t\t  DATA_BLOB *new_cookie)\n'
+p109
+aS'\nstatic NTSTATUS durable_reconnect(struct vfs_handle_struct *handle,\n\t\t\t\t\t\t struct smb_request *smb1req,\n\t\t\t\t\t\t struct smbXsrv_open *op,\n\t\t\t\t\t\t const DATA_BLOB old_cookie,\n\t\t\t\t\t\t TALLOC_CTX *mem_ctx,\n\t\t\t\t\t\t struct files_struct **fsp,\n\t\t\t\t\t\t DATA_BLOB *new_cookie)\n'
+p110
+aS'\nstatic NTSTATUS readdir_attr(struct vfs_handle_struct *handle,\n\t\t\t\t\t    const struct smb_filename *fname,\n\t\t\t\t\t    TALLOC_CTX *mem_ctx,\n\t\t\t\t\t    struct readdir_attr_data **pattr_data)\n'
+p111
+a.
